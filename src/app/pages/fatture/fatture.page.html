@@ -7,7 +7,7 @@
       <th scope="col">Importo</th>
       <th scope="col">Cliente</th>
       <th scope="col">Stato</th>
-      <th scope="col"><button [routerLink]="['/nuova-fattura']" class="btn btn-success">Nuova fattura +</button></th>
+      <th scope="col"><button [routerLink]="['/nuova-fattura']" class="btn btn-success">Nuova fattura</button></th>
       <th scope="col">
         <select name="filtro" id="filtro">
           <option selected disabled>filtra per</option>
@@ -17,7 +17,7 @@
           <option value="stato">stato</option>
         </select>
         <input type="text" placeholder="inserisci" id="valore">
-        <button type="button" class="btn btn-danger" (click)="filtra()">cerca
+        <button type="button" class="btn btn-primary" (click)="filtra()">cerca
           <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </button>
       </th>

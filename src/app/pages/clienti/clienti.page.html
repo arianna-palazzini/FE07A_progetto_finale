@@ -5,7 +5,7 @@
       <th scope="col">Ragione Sociale</th>
       <th scope="col">Email</th>
       <th scope="col">Partita Iva</th>
-      <th scope="col"><button [routerLink]="['/nuovo-cliente']" class="btn btn-success">Nuovo Cliente +</button></th>
+      <th scope="col"><button [routerLink]="['/nuovo-cliente']" class="btn btn-success btnViola">Nuovo Cliente</button></th>
       <th scope="col">
         <select (click)="getFiltro()" name="filtro" id="filtro">
           <option selected disabled>filtra per</option>
@@ -16,16 +16,16 @@
         <input *ngIf="!fatturatoValore" type="text" placeholder="inserisci" id="valore">
         <input *ngIf="fatturatoValore" type="text" placeholder="da" id="valore1">
         <input *ngIf="fatturatoValore" type="text" placeholder="a" id="valore2">
-        <button *ngIf="!fatturatoValore" type="button" class="btn btn-danger" (click)="filtra()">cerca
+        <button *ngIf="!fatturatoValore" type="button" class="btn btn-primary btnViola" (click)="filtra()">cerca
           <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </button>
-        <button *ngIf="fatturatoValore" type="button" class="btn btn-danger" (click)="filtraFatturato()">cerca
+        <button *ngIf="fatturatoValore" type="button" class="btn btn-danger btnViola" (click)="filtraFatturato()">cerca
           <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </button>
       </th>
     </tr>
-
   </thead>
+
   <tbody>
     <tr *ngFor="let cliente of clienti; let i = index">
       <td>{{cliente.id}}</td>
@@ -35,7 +35,7 @@
 
       <td><button class="btn btn-primary" [routerLink]="['/dettagli-cliente', cliente.id]">Dettagli Cliente</button></td>
       <td><button class="btn btn-primary" [routerLink]="['/fatture-cliente', cliente.id]">Fatture Personali</button></td>
-      <td><button class="btn btn-success" [routerLink]="['/edit-cliente', cliente.id]">Modifica</button></td>
+      <td><button class="btn btn-success btnViola" [routerLink]="['/edit-cliente', cliente.id]">Modifica</button></td>
       <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getFattureCliente(cliente.id)">Elimina
       </button></td>
     </tr>
