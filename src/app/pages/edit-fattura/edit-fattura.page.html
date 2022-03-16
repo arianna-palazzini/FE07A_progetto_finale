@@ -1,0 +1,46 @@
+<div class="container text-center p-5 mt-5 rounded">
+  <!-- <ng-container *ngIf="fattura.cliente ==  cliente; else unauthorizedTemplate"> -->
+    <div class="row justify-content-center">
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{errorMessage}}
+      </div>
+      <form #form="ngForm" *ngIf="fattura" (ngSubmit)="onsubmit(form)">
+        <div class="form-group mb-2">
+          <label for="date">Data</label>
+          <input ngModel name="date" class="form-control" type="date" id="date" [(ngModel)]="fattura.data" required/>
+        </div>
+        <div class="form-group mb-2">
+          <label for="numero">Numero</label>
+          <input ngModel name="numero" class="form-control" type="number" id="numero" [(ngModel)]="fattura.numero" required/>
+        </div>
+        <div class="form-group mb-2">
+            <label for="importo">Importo €</label>
+            <input ngModel name="importo" class="form-control" type="number" id="importo" [(ngModel)]="fattura.importo" required/>
+          </div>
+          <div class="form-group mb-2">
+            <label for="anno">Anno</label>
+            <input ngModel name="anno" class="form-control" type="number" id="anno" [(ngModel)]="fattura.anno" required/>
+          </div>
+          <div class="form-group mb-2">
+            <label for="clienteId">Id Cliente</label>
+            <input ngModel name="clienteId" class="form-control" disabled type="number" id="clienteId" [(ngModel)]="fattura.cliente.id" required/>
+          </div>
+        <div class="form-group mb-2">
+          <label for="stato">Stato:</label>
+          <select [(ngModel)]="fattura.stato" ngModel name="stato" id="stato" required>
+            <option value="PAGATA">PAGATA</option>
+            <option value="NON PAGATA">NON PAGATA</option>
+          </select>
+        </div>
+        <button class="btn btn-primary mt-3" [disabled]="form.invalid" [disabled]="isLoading" type="submit">
+          Modifica Fattura
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  <!-- </ng-container> -->
+</div>
+<!--
+<ng-template #unauthorizedTemplate>
+  <h1 class="text-center mt-5">ATTENZIONE: NON SEI AUTORIZZATO A VISUALIZZARE QUESTO CLIENTE!</h1>
+</ng-template> -->

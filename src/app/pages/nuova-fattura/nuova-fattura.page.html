@@ -1,0 +1,42 @@
+<div class="container text-center p-5 mt-5 rounded">
+    <div class="row justify-content-center">
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{errorMessage}}
+      </div>
+      <form #form="ngForm" (ngSubmit)="onsubmit(form)">
+        <div class="form-group mb-2">
+          <label for="date">Data</label>
+          <input ngModel name="date" class="form-control" type="date" id="date" required/>
+        </div>
+        <div class="form-group mb-2">
+          <label for="numero">Numero</label>
+          <input ngModel name="numero" class="form-control" type="number" id="numero" required/>
+        </div>
+        <div class="form-group mb-2">
+            <label for="importo">Importo €</label>
+            <input ngModel name="importo" class="form-control" type="number" id="importo" required/>
+          </div>
+          <div class="form-group mb-2">
+            <label for="anno">Anno</label>
+            <input ngModel name="anno" class="form-control" type="number" id="anno" required/>
+          </div>
+          <div class="form-group mb-2">
+            <label for="clienteId">Id Cliente</label>
+            <input ngModel name="clienteId" class="form-control" type="number" id="clienteId" required/>
+          </div>
+        <div class="form-group mb-2">
+          <label for="stato">Stato:</label>
+          <select ngModel name="stato" id="stato" required>
+            <option value="PAGATA">PAGATA</option>
+            <option value="NON PAGATA">NON PAGATA</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary mt-3" [disabled]="form.invalid" [disabled]="isLoading" type="submit">
+          Inserisci Nuova Fattura
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+

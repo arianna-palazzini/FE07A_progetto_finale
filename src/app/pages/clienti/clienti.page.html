@@ -1,0 +1,81 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Ragione Sociale</th>
+      <th scope="col">Email</th>
+      <th scope="col">Partita Iva</th>
+      <th scope="col"><button [routerLink]="['/nuovo-cliente']" class="btn btn-success">Nuovo Cliente +</button></th>
+      <th scope="col">
+        <select (click)="getFiltro()" name="filtro" id="filtro">
+          <option selected disabled>filtra per</option>
+          <option value="id">id</option>
+          <option value="fatturatoannuale">fatturato annuale</option>
+          <option value="ragionesociale">ragione sociale</option>
+        </select>
+        <input *ngIf="!fatturatoValore" type="text" placeholder="inserisci" id="valore">
+        <input *ngIf="fatturatoValore" type="text" placeholder="da" id="valore1">
+        <input *ngIf="fatturatoValore" type="text" placeholder="a" id="valore2">
+        <button *ngIf="!fatturatoValore" type="button" class="btn btn-danger" (click)="filtra()">cerca
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+        <button *ngIf="fatturatoValore" type="button" class="btn btn-danger" (click)="filtraFatturato()">cerca
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+      </th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clienti; let i = index">
+      <td>{{cliente.id}}</td>
+      <td>{{cliente.ragioneSociale}}</td>
+      <td>{{cliente.email}}</td>
+      <td>{{cliente.partitaIva}}</td>
+
+      <td><button class="btn btn-primary" [routerLink]="['/dettagli-cliente', cliente.id]">Dettagli Cliente</button></td>
+      <td><button class="btn btn-primary" [routerLink]="['/fatture-cliente', cliente.id]">Fatture Personali</button></td>
+      <td><button class="btn btn-success" [routerLink]="['/edit-cliente', cliente.id]">Modifica</button></td>
+      <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getFattureCliente(cliente.id)">Elimina
+      </button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Attenzione!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div *ngIf="fattureCliente" class="modal-body">
+        Il cliente selezionato ha <span *ngIf="isLoadingModale" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span *ngIf="!isLoadingModale">{{fattureCliente.length}}</span> fatture, sei sicuro di voler procedere con l'eliminazione totale del cliente e di tutte le sue fatture?
+      </div>
+      <div *ngIf="!fattureCliente" class="modal-body">
+        Il cliente selezionato non ha fatture, sei sicuro di voler procedere con l'eliminazione totale del cliente?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+        <button type="button" class="btn btn-primary" (click)="onRemoveCliente()" data-bs-dismiss="modal">Elimina</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" style="cursor: pointer;" (click)="cambiaPagina('-')" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link">{{pagina}}</a></li>
+    <li class="page-item">
+      <a class="page-link" style="cursor: pointer;" (click)="cambiaPagina('+')" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+

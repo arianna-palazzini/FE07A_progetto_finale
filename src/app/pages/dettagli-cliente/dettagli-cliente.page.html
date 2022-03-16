@@ -1,0 +1,79 @@
+<h3>Dati Cliente</h3>
+<table *ngIf="cliente" class="table mb-5">
+  <thead>
+    <tr>
+      <th scope="col">RagioneSociale</th>
+      <th scope="col">PartitaIva</th>
+      <th scope="col">TipoCliente</th>
+      <th scope="col">Email</th>
+      <th scope="col">Pec</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">NomeContatto</th>
+      <th scope="col">CognomeContatto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{cliente.ragioneSociale}}</td>
+      <td>{{cliente.partitaIva}}</td>
+      <td>{{cliente.tipoCliente}}</td>
+      <td>{{cliente.email}}</td>
+      <td>{{cliente.pec}}</td>
+      <td>{{cliente.telefono}}</td>
+      <td>{{cliente.nomeContatto}}</td>
+      <td>{{cliente.cognomeContatto}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>indirizzoSedeOperativa</h3>
+<table *ngIf="cliente" class="table mb-5">
+  <thead>
+    <tr>
+      <th scope="col">Via</th>
+      <th scope="col">Civico</th>
+      <th scope="col">Cap</th>
+      <th scope="col">Localita</th>
+      <th scope="col">Comune</th>
+      <th scope="col">Provincia</th>
+      <th scope="col">Sigla</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{cliente.indirizzoSedeOperativa.via}}</td>
+      <td>{{cliente.indirizzoSedeOperativa.civico}}</td>
+      <td>{{cliente.indirizzoSedeOperativa.cap}}</td>
+      <td>{{cliente.indirizzoSedeOperativa.localita}}</td>
+      <td>{{cliente.indirizzoSedeOperativa.comune.nome}}</td>
+      <td>{{cliente.indirizzoSedeOperativa.comune.provincia.nome}}</td>
+      <td>{{cliente.indirizzoSedeOperativa.comune.provincia.sigla}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>indirizzoSedeLegale</h3>
+<table *ngIf="cliente" class="table mb-5">
+  <thead>
+    <tr>
+      <th scope="col">Via</th>
+      <th scope="col">Civico</th>
+      <th scope="col">Cap</th>
+      <th scope="col">Localita</th>
+      <th scope="col">Comune</th>
+      <th scope="col">Provincia</th>
+      <th scope="col">Sigla</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{cliente.indirizzoSedeLegale.via}}</td>
+      <td>{{cliente.indirizzoSedeLegale.civico}}</td>
+      <td>{{cliente.indirizzoSedeLegale.cap}}</td>
+      <td>{{cliente.indirizzoSedeLegale.localita}}</td>
+      <td>{{cliente.indirizzoSedeLegale.comune.nome}}</td>
+      <td>{{cliente.indirizzoSedeLegale.comune.provincia.nome}}</td>
+      <td>{{cliente.indirizzoSedeLegale.comune.provincia.sigla}}</td>
+    </tr>
+  </tbody>
+</table>

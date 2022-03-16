@@ -1,0 +1,22 @@
+<table *ngIf="fattura" class="table">
+  <thead>
+    <tr>
+      <th scope="col">Data</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Anno</th>
+      <th scope="col">Importo</th>
+      <th scope="col">Stato</th>
+      <th scope="col"><button [routerLink]="['/fatture-cliente', cliente?.id]" class="btn btn-success">Torna alle fatture del Cliente</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{fattura.data}}</td>
+      <td>{{fattura.numero}}</td>
+      <td>{{fattura.anno}}</td>
+      <td>{{fattura.importo}}</td>
+      <td>{{fattura.stato.nome}}</td>
+    </tr>
+  </tbody>
+</table>
+

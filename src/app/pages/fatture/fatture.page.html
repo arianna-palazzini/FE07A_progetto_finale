@@ -1,0 +1,57 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Anno</th>
+      <th scope="col">Data</th>
+      <th scope="col">Importo</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Stato</th>
+      <th scope="col"><button [routerLink]="['/nuova-fattura']" class="btn btn-success">Nuova fattura +</button></th>
+      <th scope="col">
+        <select name="filtro" id="filtro">
+          <option selected disabled>filtra per</option>
+          <option value="id">id</option>
+          <option value="anno">anno</option>
+          <option value="cliente">cliente</option>
+          <option value="stato">stato</option>
+        </select>
+        <input type="text" placeholder="inserisci" id="valore">
+        <button type="button" class="btn btn-danger" (click)="filtra()">cerca
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fattura of fatture; let i = index;">
+      <td>{{fattura?.id}}</td>
+      <td>{{fattura?.anno}}</td>
+      <td>{{fattura?.data}}</td>
+      <td>{{fattura?.importo}}</td>
+      <td>{{fattura?.cliente?.ragioneSociale}}</td>
+      <td>{{fattura?.stato?.nome}}</td>
+
+      <!--         <td><button class="btn btn-primary" [routerLink]="['/',fattura.id]">Nuova</button></td>-->
+      <td><button class="btn btn-success" [routerLink]="['/edit-fattura', fattura.id]">Modifica</button></td>
+      <td><button class="btn btn-danger" (click)="rimuoviFattura(fattura)">Elimina</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<nav *ngIf="!booleanoFiltro" aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" style="cursor: pointer;" (click)="cambiaPagina('-')" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link">{{pagina}}</a></li>
+    <li class="page-item">
+      <a class="page-link" style="cursor: pointer;" (click)="cambiaPagina('+')" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,239 @@
+<div class="container text-center p-5 mt-5 rounded">
+  <!-- <ng-container *ngIf="fattura.cliente ==  cliente; else unauthorizedTemplate"> -->
+  <div class="row justify-content-center">
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+    <form
+      #form="ngForm"
+      *ngIf="cliente"
+      (ngSubmit)="onsubmit(form, cliente.id)"
+    >
+    <div class="form-group mb-2">
+      <label for="ragioneSociale">Ragione Sociale</label>
+      <input
+        ngModel
+        name="ragioneSociale"
+        class="form-control"
+        type="text"
+        id="ragioneSociale"
+        [(ngModel)]="cliente.ragioneSociale"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="partitaIva">Partita Iva</label>
+      <input
+        ngModel
+        name="partitaIva"
+        class="form-control"
+        type="text"
+        id="partitaIva"
+        [(ngModel)]="cliente.partitaIva"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="tipoCliente">Tipo Cliente</label>
+      <select ngModel  [(ngModel)]="cliente.tipoCliente" class="form-select" id="tipoCliente" name="tipoCliente" required>
+        <option selected value="SRL">SRL</option>
+        <option selected value="SPA">SPA</option>
+        <option selected value="SAS">SAS</option>
+        <option selected value="PA">PA</option>
+      </select>
+    </div>
+    <div class="form-group mb-2">
+      <label for="nomeContatto">Nome</label>
+      <input
+        ngModel
+        name="nomeContatto"
+        class="form-control"
+        type="text"
+        id="nomeContatto"
+        [(ngModel)]="cliente.nomeContatto"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="cognomeContatto">Cognome</label>
+      <input
+        ngModel
+        name="cognomeContatto"
+        class="form-control"
+        type="text"
+        id="cognomeContatto"
+        [(ngModel)]="cliente.cognomeContatto"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="emailContatto">Email Contatto</label>
+      <input
+        ngModel
+        name="emailContatto"
+        class="form-control"
+        type="email"
+        id="emailContatto"
+        [(ngModel)]="cliente.emailContatto"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="email">Email</label>
+      <input
+        ngModel
+        name="email"
+        class="form-control"
+        type="email"
+        id="email"
+        [(ngModel)]="cliente.email"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="pec">Pec</label>
+      <input ngModel  [(ngModel)]="cliente.pec" name="pec" class="form-control" type="text" id="pec" required/>
+    </div>
+    <div class="form-group mb-2">
+      <label for="telefonoContatto">Telefono Contatto</label>
+      <input
+        ngModel
+        name="telefonoContatto"
+        class="form-control"
+        type="tel"
+        id="telefonoContatto"
+        [(ngModel)]="cliente.telefonoContatto"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="telefono">Telefono</label>
+      <input
+        ngModel
+        name="telefono"
+        class="form-control"
+        type="tel"
+        id="telefono"
+        [(ngModel)]="cliente.telefono"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="viaSedeOperativa">Indirizzo Sede Operativa</label>
+      <input
+        ngModel
+        name="viaSedeOperativa"
+        class="form-control"
+        type="text"
+        id="viaSedeOperativa"
+        [(ngModel)]="cliente.indirizzoSedeOperativa.via"
+        required
+      />
+      Civico:<input
+        ngModel
+        name="civicoSedeOperativa"
+        class="form-control"
+        type="text"
+        id="civicoSedeOperativa"
+        [(ngModel)]="cliente.indirizzoSedeOperativa.civico"
+        required
+      />
+      CAP:<input
+        ngModel
+        name="capSedeOperativa"
+        class="form-control"
+        type="text"
+        id="capSedeOperativa"
+        [(ngModel)]="cliente.indirizzoSedeOperativa.cap"
+        required
+      />
+      Località:<input
+        ngModel
+        name="localitaSedeOperativa"
+        class="form-control"
+        type="text"
+        id="localitaSedeOperativa"
+        [(ngModel)]="cliente.indirizzoSedeOperativa.localita"
+        required
+      />
+    </div>
+    <div class="form-group mb-2">
+      <label for="ComuneSedeOperativa">Comune</label>
+      <select ngModel [(ngModel)]="cliente.indirizzoSedeOperativa.comune.nome" class="form-select" id="ComuneSedeOperativa" name="ComuneSedeOperativa" required>
+        <option *ngFor="let comune of comuni" value="{{comune.nome}}">{{comune.nome}}</option>
+      </select>
+    </div>
+    <div class="form-group mb-2">
+      <label for="provinciaSedeOperativa">Provincia</label>
+      <select ngModel [(ngModel)]="cliente.indirizzoSedeOperativa.comune.provincia.nome" class="form-select" id="provinciaSedeOperativa" name="provinciaSedeOperativa" required>
+        <option *ngFor="let provincia of province" value="{{provincia.nome}}">{{provincia.nome}}</option>
+      </select>
+    </div>
+    <div class="form-group mb-2">
+      <label for="indirizzoSedeLegale">Indirizzo Sede Legale</label>
+      <input
+        ngModel
+        name="viaSedeLegale"
+        class="form-control"
+        type="text"
+        id="viaSedeLegale"
+        [(ngModel)]="cliente.indirizzoSedeLegale.via"
+        required
+      />
+      Civico:<input
+        ngModel
+        name="civicoSedeLegale"
+        class="form-control"
+        type="text"
+        id="civicoSedeLegale"
+        [(ngModel)]="cliente.indirizzoSedeLegale.civico"
+        required
+      />
+      CAP:<input
+        ngModel
+        name="capSedeLegale"
+        class="form-control"
+        type="text"
+        id="capSedeLegale"
+        [(ngModel)]="cliente.indirizzoSedeLegale.cap"
+        required
+      />
+      Località:<input
+      ngModel
+      name="localitaSedeLegale"
+      class="form-control"
+      type="text"
+      id="localitaSedeLegale"
+      [(ngModel)]="cliente.indirizzoSedeLegale.localita"
+      required
+    />
+    </div>
+    <div class="form-group mb-2">
+      <label for="comuneSedeLegale">Comune</label>
+      <select ngModel  [(ngModel)]="cliente.indirizzoSedeLegale.comune.nome" class="form-select" id="comuneSedeLegale" name="comuneSedeLegale" required>
+        <option *ngFor="let comune of comuni" value="{{comune.nome}}">{{comune.nome}}</option>
+      </select>
+    </div>
+    <div class="form-group mb-2">
+      <label for="provinciaSedeLegale">Provincia</label>
+      <select ngModel  [(ngModel)]="cliente.indirizzoSedeLegale.comune.provincia.nome" class="form-select" id="provinciaSedeLegale" name="provinciaSedeLegale" required >
+        <option *ngFor="let provincia of province" value="{{provincia.nome}}">{{provincia.nome}}</option>
+      </select>
+    </div>
+      <button class="btn btn-primary mt-3" [disabled]="form.invalid" [disabled]="isLoading" type="submit">
+        Modifica Cliente
+        <span
+          *ngIf="isLoading"
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+      </button>
+    </form>
+  </div>
+  <!-- </ng-container> -->
+</div>
+<!--
+<ng-template #unauthorizedTemplate>
+  <h1 class="text-center mt-5">ATTENZIONE: NON SEI AUTORIZZATO A VISUALIZZARE QUESTO CLIENTE!</h1>
+</ng-template> -->

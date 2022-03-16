@@ -1,0 +1,40 @@
+<div class="container text-center p-5 mt-5 rounded">
+  <div class="row justify-content-center">
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{errorMessage}}
+      </div>
+      <form #form="ngForm" (ngSubmit)="onsubmit(form)">
+        <div class="form-group mb-2">
+          <label for="username">Username</label>
+          <input ngModel name="username" class="form-control" type="text" id="username" required/>
+        </div>
+        <div class="form-group mb-2">
+          <label for="nome">Nome</label>
+          <input ngModel name="nome" class="form-control" type="text" id="nome" required/>
+        </div>
+        <div class="form-group mb-2">
+          <label for="cognome">Cognome</label>
+          <input ngModel name="cognome" class="form-control" type="text" id="cognome" required/>
+        </div>
+        <div class="form-group mb-2">
+          <label for="email">Email</label>
+          <input ngModel name="email" class="form-control" type="email" id="email" required/>
+        </div>
+        <div class="form-group mb-2">
+          <label for="password">Password</label>
+          <input ngModel name="password" class="form-control" type="password" id="pass" required/>
+        </div>
+        <div class="form-group mb-2">
+          <h4>Tipo di utente:</h4>
+          <select ngModel name="roles" id="roles" required>
+            <option value="ROLE_ADMIN">ADMIN</option>
+          </select>
+        </div>
+        <button class="btn btn-primary mt-3 mb-3" [disabled]="form.invalid" [disabled]="isLoading" type="submit">
+          Registrati
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+      </form>
+      <p>Sei già registrato? <a [routerLink]="['/login']">Accedi</a></p>
+    </div>
+  </div>
