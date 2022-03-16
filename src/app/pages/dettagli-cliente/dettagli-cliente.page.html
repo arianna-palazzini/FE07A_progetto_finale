@@ -1,15 +1,15 @@
-<h3>Dati Cliente</h3>
+<h3 id="datiCliente" class="text-center mb-4">Dati Cliente</h3>
 <table *ngIf="cliente" class="table mb-5">
   <thead>
     <tr>
-      <th scope="col">RagioneSociale</th>
-      <th scope="col">PartitaIva</th>
-      <th scope="col">TipoCliente</th>
+      <th scope="col">Ragione Sociale</th>
+      <th scope="col">Partita Iva</th>
+      <th scope="col">Tipo Azienda</th>
       <th scope="col">Email</th>
       <th scope="col">Pec</th>
       <th scope="col">Telefono</th>
-      <th scope="col">NomeContatto</th>
-      <th scope="col">CognomeContatto</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Cognome</th>
     </tr>
   </thead>
   <tbody>
@@ -26,14 +26,14 @@
   </tbody>
 </table>
 
-<h3>indirizzoSedeOperativa</h3>
+<h3 class="text-center mt-5 mb-4">Sede Operativa</h3>
 <table *ngIf="cliente" class="table mb-5">
   <thead>
     <tr>
-      <th scope="col">Via</th>
+      <th scope="col">Via/Piazza</th>
       <th scope="col">Civico</th>
       <th scope="col">Cap</th>
-      <th scope="col">Localita</th>
+      <th scope="col">Località</th>
       <th scope="col">Comune</th>
       <th scope="col">Provincia</th>
       <th scope="col">Sigla</th>
@@ -52,14 +52,14 @@
   </tbody>
 </table>
 
-<h3>indirizzoSedeLegale</h3>
+<h3 class="text-center mt-5 mb-4">Sede Legale</h3>
 <table *ngIf="cliente" class="table mb-5">
   <thead>
     <tr>
-      <th scope="col">Via</th>
+      <th scope="col">Via/Piazza</th>
       <th scope="col">Civico</th>
       <th scope="col">Cap</th>
-      <th scope="col">Localita</th>
+      <th scope="col">Località</th>
       <th scope="col">Comune</th>
       <th scope="col">Provincia</th>
       <th scope="col">Sigla</th>
