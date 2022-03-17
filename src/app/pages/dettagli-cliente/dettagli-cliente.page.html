@@ -1,4 +1,6 @@
-<div class="row">
+<div id="box">
+<div class="container text-center rounded">
+  <div class="row">
   <div class="col-3 offset-11">
   <button [routerLink]="['/clienti']" class="btn btn-success btnViola">&lt;</button>
   </div>
@@ -59,7 +61,7 @@
 </table>
 
 <h4 class="text-center mt-5 mb-4">Sede Legale</h4>
-<table *ngIf="cliente" class="table mb-5">
+<table *ngIf="cliente" class="table pb-5">
   <thead>
     <tr>
       <th scope="col">Via/Piazza</th>
@@ -83,3 +85,5 @@
     </tr>
   </tbody>
 </table>
+</div>
+</div>
