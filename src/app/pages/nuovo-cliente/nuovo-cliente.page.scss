@@ -1,10 +1,19 @@
 .container {
-    border: 1px solid black;
-    width: 30em;
-  }
+  border: 1px solid black;
+  width: 30em;
+  margin-top: 80px;
+  background-color: rgba(255, 255, 255, 0.658);
+}
+
 
   .btnViola{
-    background-color: #413F81;
+    background-color: #4A5E55;
     border: none;
-    margin-top: 90px;
+  }
+  .btnViola:hover{
+    background-color: #394741;
+  }
+
+  #box{
+    padding-top: 30px;
   }

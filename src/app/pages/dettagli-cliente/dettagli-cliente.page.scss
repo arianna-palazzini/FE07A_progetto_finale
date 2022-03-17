@@ -1,11 +1,18 @@
+
+.container {
+  border: 1px solid black;
+  width: 70em;
+  margin-top: 80px;
+  background-color: rgba(255, 255, 255, 0.658);
+}
+
 thead {
   background-color: #9ab9ca;
   height: 50px;
 }
 
 td{
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(211,233,255,1) 98%, rgba(144,162,232,1) 100%, rgba(218,249,255,1) 100%);
-}
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(206,228,240,1) 98%, rgba(144,162,232,1) 100%, rgba(218,249,255,1) 100%);}
 
 .btnViola{
   background-color: #4A5E55;
@@ -13,13 +20,6 @@ td{
 }
 .btnViola:hover{
   background-color: #394741;
-}
-
-.container {
-  border: 1px solid black;
-  width: 70em;
-  margin-top: 80px;
-  background-color: rgba(255, 255, 255, 0.658);
 }
 
 #box{

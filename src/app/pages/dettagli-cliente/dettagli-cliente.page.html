@@ -1,89 +1,89 @@
 <div id="box">
-<div class="container text-center rounded">
-  <div class="row">
-  <div class="col-3 offset-11">
-  <button [routerLink]="['/clienti']" class="btn btn-success btnViola">&lt;</button>
+  <div class="container text-center rounded">
+    <div class="row">
+      <div class="col-3 offset-11">
+        <button [routerLink]="['/clienti']" class="btn btn-success btnViola">&lt;</button>
+      </div>
+    </div>
+
+    <h4 id="datiCliente" class="text-center mb-4">Dati Cliente</h4>
+    <table *ngIf="cliente" class="table mb-5">
+      <thead>
+        <tr>
+          <th scope="col">Ragione Sociale</th>
+          <th scope="col">Partita Iva</th>
+          <th scope="col">Tipo Azienda</th>
+          <th scope="col">Email</th>
+          <th scope="col">Pec</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Cognome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{cliente.ragioneSociale}}</td>
+          <td>{{cliente.partitaIva}}</td>
+          <td>{{cliente.tipoCliente}}</td>
+          <td>{{cliente.email}}</td>
+          <td>{{cliente.pec}}</td>
+          <td>{{cliente.telefono}}</td>
+          <td>{{cliente.nomeContatto}}</td>
+          <td>{{cliente.cognomeContatto}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="text-center mt-5 mb-4">Sede Operativa</h4>
+    <table *ngIf="cliente" class="table mb-5">
+      <thead>
+        <tr>
+          <th scope="col">Via/Piazza</th>
+          <th scope="col">Civico</th>
+          <th scope="col">Cap</th>
+          <th scope="col">Località</th>
+          <th scope="col">Comune</th>
+          <th scope="col">Provincia</th>
+          <th scope="col">Sigla</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{cliente.indirizzoSedeOperativa.via}}</td>
+          <td>{{cliente.indirizzoSedeOperativa.civico}}</td>
+          <td>{{cliente.indirizzoSedeOperativa.cap}}</td>
+          <td>{{cliente.indirizzoSedeOperativa.localita}}</td>
+          <td>{{cliente.indirizzoSedeOperativa.comune.nome}}</td>
+          <td>{{cliente.indirizzoSedeOperativa.comune.provincia.nome}}</td>
+          <td>{{cliente.indirizzoSedeOperativa.comune.provincia.sigla}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="text-center mt-5 mb-4">Sede Legale</h4>
+    <table *ngIf="cliente" class="table pb-5">
+      <thead>
+        <tr>
+          <th scope="col">Via/Piazza</th>
+          <th scope="col">Civico</th>
+          <th scope="col">Cap</th>
+          <th scope="col">Località</th>
+          <th scope="col">Comune</th>
+          <th scope="col">Provincia</th>
+          <th scope="col">Sigla</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{cliente.indirizzoSedeLegale.via}}</td>
+          <td>{{cliente.indirizzoSedeLegale.civico}}</td>
+          <td>{{cliente.indirizzoSedeLegale.cap}}</td>
+          <td>{{cliente.indirizzoSedeLegale.localita}}</td>
+          <td>{{cliente.indirizzoSedeLegale.comune.nome}}</td>
+          <td>{{cliente.indirizzoSedeLegale.comune.provincia.nome}}</td>
+          <td>{{cliente.indirizzoSedeLegale.comune.provincia.sigla}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
-
-<h4 id="datiCliente" class="text-center mb-4">Dati Cliente</h4>
-<table *ngIf="cliente" class="table mb-5">
-  <thead>
-    <tr>
-      <th scope="col">Ragione Sociale</th>
-      <th scope="col">Partita Iva</th>
-      <th scope="col">Tipo Azienda</th>
-      <th scope="col">Email</th>
-      <th scope="col">Pec</th>
-      <th scope="col">Telefono</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Cognome</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{cliente.ragioneSociale}}</td>
-      <td>{{cliente.partitaIva}}</td>
-      <td>{{cliente.tipoCliente}}</td>
-      <td>{{cliente.email}}</td>
-      <td>{{cliente.pec}}</td>
-      <td>{{cliente.telefono}}</td>
-      <td>{{cliente.nomeContatto}}</td>
-      <td>{{cliente.cognomeContatto}}</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 class="text-center mt-5 mb-4">Sede Operativa</h4>
-<table *ngIf="cliente" class="table mb-5">
-  <thead>
-    <tr>
-      <th scope="col">Via/Piazza</th>
-      <th scope="col">Civico</th>
-      <th scope="col">Cap</th>
-      <th scope="col">Località</th>
-      <th scope="col">Comune</th>
-      <th scope="col">Provincia</th>
-      <th scope="col">Sigla</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{cliente.indirizzoSedeOperativa.via}}</td>
-      <td>{{cliente.indirizzoSedeOperativa.civico}}</td>
-      <td>{{cliente.indirizzoSedeOperativa.cap}}</td>
-      <td>{{cliente.indirizzoSedeOperativa.localita}}</td>
-      <td>{{cliente.indirizzoSedeOperativa.comune.nome}}</td>
-      <td>{{cliente.indirizzoSedeOperativa.comune.provincia.nome}}</td>
-      <td>{{cliente.indirizzoSedeOperativa.comune.provincia.sigla}}</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 class="text-center mt-5 mb-4">Sede Legale</h4>
-<table *ngIf="cliente" class="table pb-5">
-  <thead>
-    <tr>
-      <th scope="col">Via/Piazza</th>
-      <th scope="col">Civico</th>
-      <th scope="col">Cap</th>
-      <th scope="col">Località</th>
-      <th scope="col">Comune</th>
-      <th scope="col">Provincia</th>
-      <th scope="col">Sigla</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{cliente.indirizzoSedeLegale.via}}</td>
-      <td>{{cliente.indirizzoSedeLegale.civico}}</td>
-      <td>{{cliente.indirizzoSedeLegale.cap}}</td>
-      <td>{{cliente.indirizzoSedeLegale.localita}}</td>
-      <td>{{cliente.indirizzoSedeLegale.comune.nome}}</td>
-      <td>{{cliente.indirizzoSedeLegale.comune.provincia.nome}}</td>
-      <td>{{cliente.indirizzoSedeLegale.comune.provincia.sigla}}</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
