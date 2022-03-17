@@ -5,6 +5,8 @@
       <th scope="col">Ragione Sociale</th>
       <th scope="col">Email</th>
       <th scope="col">Partita Iva</th>
+      <th></th>
+      <th></th>
       <th scope="col"><button [routerLink]="['/nuovo-cliente']" class="btn btn-success btnViola">Nuovo Cliente</button></th>
       <th scope="col">
         <select (click)="getFiltro()" name="filtro" id="filtro">
@@ -13,9 +15,13 @@
           <option value="fatturatoannuale">fatturato annuale</option>
           <option value="ragionesociale">ragione sociale</option>
         </select>
+      </th>
+      <th scope="col">
         <input *ngIf="!fatturatoValore" type="text" placeholder="inserisci" id="valore">
         <input *ngIf="fatturatoValore" type="text" placeholder="da" id="valore1">
         <input *ngIf="fatturatoValore" type="text" placeholder="a" id="valore2">
+      </th>
+        <th scope="col">
         <button *ngIf="!fatturatoValore" type="button" class="btn btn-primary btnViola" (click)="filtra()">cerca
           <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </button>
@@ -32,10 +38,12 @@
       <td>{{cliente.ragioneSociale}}</td>
       <td>{{cliente.email}}</td>
       <td>{{cliente.partitaIva}}</td>
+      <td></td>
 
       <td><button class="btn btn-primary btnLilla" [routerLink]="['/dettagli-cliente', cliente.id]">Dettagli Cliente</button></td>
       <td><button class="btn btn-primary btnBlu" [routerLink]="['/fatture-cliente', cliente.id]">Fatture Personali</button></td>
       <td><button class="btn btn-success btnViola" [routerLink]="['/edit-cliente', cliente.id]">Modifica</button></td>
+      <td></td>
       <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getFattureCliente(cliente.id)">Elimina
       </button></td>
     </tr>

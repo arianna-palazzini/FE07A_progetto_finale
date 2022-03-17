@@ -1,3 +1,9 @@
+<div class="row">
+  <div class="col-3 offset-11">
+  <button [routerLink]="['/clienti']" class="btn btn-success btnViola">&lt;</button>
+  </div>
+</div>
+
 <div class="container text-center p-5 rounded">
   <!-- <ng-container *ngIf="fattura.cliente ==  cliente; else unauthorizedTemplate"> -->
   <div class="row justify-content-center">
@@ -10,7 +16,7 @@
       (ngSubmit)="onsubmit(form, cliente.id)"
     >
     <div class="form-group mb-2">
-      <label for="ragioneSociale">Ragione Sociale</label>
+      <label for="ragioneSociale"><b>Ragione Sociale</b></label>
       <input
         ngModel
         name="ragioneSociale"
@@ -119,7 +125,7 @@
       />
     </div>
     <div class="form-group mb-2">
-      <label for="viaSedeOperativa">Indirizzo Sede Operativa</label>
+      <label for="viaSedeOperativa"><b>Indirizzo Sede Operativa</b></label>
       <input
         ngModel
         name="viaSedeOperativa"
@@ -170,7 +176,7 @@
       </select>
     </div>
     <div class="form-group mb-2">
-      <label for="indirizzoSedeLegale">Indirizzo Sede Legale</label>
+      <label for="indirizzoSedeLegale"><b>Indirizzo Sede Legale</b></label>
       <input
         ngModel
         name="viaSedeLegale"
