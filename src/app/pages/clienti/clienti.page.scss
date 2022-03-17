@@ -8,20 +8,39 @@ thead {
 }
 
 td{
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,225,255,1) 98%, rgba(144,162,232,1) 100%, rgba(218,249,255,1) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(211,233,255,1) 98%, rgba(144,162,232,1) 100%, rgba(218,249,255,1) 100%);
 }
 
 .btnViola{
-  background-color: #413F81;
+  background-color: #4A5E55;
   border: none;
+}
+.btnViola:hover{
+  background-color: #394741;
 }
 
 .btnBlu{
-  background-color: #4A4AC1;
+  background-color: #c5a285;
   border: none;
 }
 
+.btnBlu:hover{
+  background-color: #a3866e;
+}
+
 .btnLilla{
-  background-color: #90A2E8;
+  background-color: #9ab9ca;
   border: none;
+}
+
+.btnLilla:hover{
+  background-color: #7d99a8;
+}
+
+.btnRosso{
+  background-color: #C14B4B;
+}
+
+.btnRosso:hover{
+  background-color: #9b3d3d;
 }
