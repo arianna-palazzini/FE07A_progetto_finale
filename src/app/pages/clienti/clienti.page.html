@@ -33,8 +33,8 @@
       <td>{{cliente.email}}</td>
       <td>{{cliente.partitaIva}}</td>
 
-      <td><button class="btn btn-primary" [routerLink]="['/dettagli-cliente', cliente.id]">Dettagli Cliente</button></td>
-      <td><button class="btn btn-primary" [routerLink]="['/fatture-cliente', cliente.id]">Fatture Personali</button></td>
+      <td><button class="btn btn-primary btnLilla" [routerLink]="['/dettagli-cliente', cliente.id]">Dettagli Cliente</button></td>
+      <td><button class="btn btn-primary btnBlu" [routerLink]="['/fatture-cliente', cliente.id]">Fatture Personali</button></td>
       <td><button class="btn btn-success btnViola" [routerLink]="['/edit-cliente', cliente.id]">Modifica</button></td>
       <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getFattureCliente(cliente.id)">Elimina
       </button></td>

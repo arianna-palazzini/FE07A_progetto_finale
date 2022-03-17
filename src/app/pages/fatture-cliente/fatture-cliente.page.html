@@ -27,7 +27,7 @@
       <td>{{fattura.importo}}</td>
       <td>{{fattura.stato.nome}}</td>
 
-      <td><button class="btn btn-warning" [routerLink]="['/dettagli-fattura', fattura.id]">Dettagli Fattura</button></td>
+      <td><button class="btn btn-warning btnLilla" [routerLink]="['/dettagli-fattura', fattura.id]">Dettagli Fattura</button></td>
       <td><button class="btn btn-success btnViola" [routerLink]="['/edit-fattura', fattura.id]">Modifica</button></td>
       <td><button class="btn btn-danger" (click)="rimuoviFattura(fattura)">Elimina</button></td>
     </tr>
