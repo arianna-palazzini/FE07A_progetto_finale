@@ -29,6 +29,7 @@
           <h4>Tipo di utente:</h4>
           <select ngModel name="roles" id="roles" required>
             <option value="ROLE_ADMIN">ADMIN</option>
+            <option value="user">USER</option>
           </select>
         </div>
         <button class="btn btn-primary mt-3 mb-3" [disabled]="form.invalid" [disabled]="isLoading" type="submit">
