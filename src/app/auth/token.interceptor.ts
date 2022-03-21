@@ -29,7 +29,7 @@ export class TokenInterceptor implements HttpInterceptor {
             .set(
               'Authorization',
               'Bearer ' +
-                'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NjgxNTg4NSwiZXhwIjoxNjQ3Njc5ODg1fQ.pMpzREiLSMg5RfrKKY5KWp-d594qTx5KPj8i_Fxuns-4hz9UA_3IW0sMqN6XaPLU3LvVhGM88Kh-CRNoi4W_qg'
+                'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0NzUwNzE5OCwiZXhwIjoxNjQ4MzcxMTk4fQ.hDmA5CnOrvWrGOq_cOiMaptYKXUvU186b5BoxNRqjLrDfpByPrdIacV0GFkBA_U7lWVqK4LekBVXXAskE_ft6Q'
             )
             .set('X-TENANT-ID', 'fe_0721a'),
         });
