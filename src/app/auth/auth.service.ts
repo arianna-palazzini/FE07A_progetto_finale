@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   login(data: { username: string; password: string }) {
-    return this.http.post<AuthData>(`${this.URL}/api/auth/login`, data).pipe(
+    return this.http.post<AuthData>(`${this.URL}/api/auth/login`, data).pipe(
       tap((val) => {
       }),
       tap((data) => {
@@ -63,7 +63,7 @@ export class AuthService {
 
   // signup(data: SignupData) {
   //   return this.http
-  //     .post(`${this.URL}/api/auth/signup`, data)
+  //     .post(`${this.URL}/api/auth/signup`, data)
   //     .pipe(catchError(this.errors));
   // }
 

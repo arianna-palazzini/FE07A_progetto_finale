@@ -24,15 +24,6 @@ export class FatturePage implements OnInit {
     });
   }
 
-  // cambiaPagina(param: string) {
-  //   if (param == '+') {
-  //     this.pagina++;
-  //   } else if (param == '-') {
-  //     this.pagina--;
-  //   }
-  //   this.getFatture();
-  // }
-
   cambiaPagina(param: string) {
     if (param == '+') {
       this.pagina++;
